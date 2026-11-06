@@ -344,4 +344,5 @@ def exported(filename:str):
     return FileResponse(path,filename=path.name)
 
 FRONTEND=(Path(getattr(sys,'_MEIPASS'))/'frontend/dist') if getattr(sys,'frozen',False) else Path(__file__).resolve().parents[2]/'frontend/dist'
+mimetypes.add_type('text/javascript','.mjs')
 if FRONTEND.exists(): app.mount('/',StaticFiles(directory=FRONTEND,html=True),name='frontend')
