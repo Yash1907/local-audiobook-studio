@@ -29,7 +29,7 @@ For development hot reload, run `scripts\dev.ps1` and open `http://127.0.0.1:517
 .\scripts\build.ps1
 ```
 
-The build appears in `dist\LocalAudiobookStudio`. The directory build completed in the development environment at 197.3 MiB, without models. The packaged executable passed a backend startup and health-check smoke test. A visible desktop window and clean Windows machine have not yet been validated.
+The build appears in `dist\LocalAudiobookStudio`. The directory build completed in the development environment at 199 MiB, without models. The packaged executable passed a backend startup and health-check smoke test. A visible desktop window and clean Windows machine have not yet been validated.
 
 ## Models
 
@@ -69,4 +69,4 @@ The optional real model smoke scripts are `python -m scripts.model_smoke` and `p
 
 Verified here on Windows 11 with Python 3.13.5 and Node 24.4.1: six backend tests passed; the React production build passed; Quick Read generated a real 3.48 second Kokoro WAV through the API and played it in the browser; LFM returned structured text using llama.cpp b12177; a complex academic passage took the LFM normalization path. PDF extraction and PDF.js page rendering were tested with a generated real PDF, and EPUB spine ordering with a generated ebook. The packaged executable passed a backend startup smoke check. OCR, article import, visible desktop window startup, and a clean machine portable launch remain unverified.
 
-Observed model files: Kokoro ONNX 325,505,369 bytes; Kokoro voices 28,214,398 bytes; LFM Q4_K_M GGUF 1,099,627,808 bytes. Together with the 197.3 MiB directory build, the installed footprint is about 1.65 GiB before generated audio, FFmpeg, Tesseract, and the separate llama.cpp runtime.
+Observed model files: Kokoro ONNX 325,505,369 bytes; Kokoro voices 28,214,398 bytes; LFM Q4_K_M GGUF 1,099,627,808 bytes. Together with the 199 MiB directory build, the installed footprint is about 1.65 GiB before generated audio, FFmpeg, Tesseract, and the separate llama.cpp runtime.
